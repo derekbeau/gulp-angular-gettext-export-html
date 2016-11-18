@@ -26,6 +26,7 @@ module.exports = function(poFiles) {
   var translations = _.zipObject(languages, _.pluck(parsedPoFiles, 'items'));
 
   var normalizeText = function(text){
+    if (typeof text === 'undefined') return '';
     return text.replace(/(?:\r\n|\r|\n|\t|\\t|\\n)/g, '').trim();
   };
 
